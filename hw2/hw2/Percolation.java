@@ -113,7 +113,7 @@ public class Percolation {
     }
 
     //does the system percolate?
-    public boolean percolate() {
+    public boolean percolates() {
         return unionFind.connected(VIRTUAL_TOP_SITE_INDEX, VIRTUAL_BOTTOM_SITE_INDEX);
     }
 

@@ -20,7 +20,7 @@ public class PercolationStats {
         for (int i = 0; i < T; i++) {
             int count = 0;
             Percolation temp = pf.make(N);
-            while (!temp.percolate()) {
+            while (!temp.percolates()) {
                 int temp1 = StdRandom.uniform(0, N);
                 int temp2 = StdRandom.uniform(0, N);
                 if (temp.isOpen(temp1, temp2)) {
@@ -54,13 +54,5 @@ public class PercolationStats {
         return this.mean() + 1.96 * (this.stddev() / Math.sqrt(len));
     }
 
-    public static void main(String[] args) {
-        PercolationStats temp = new PercolationStats(20, 10, new PercolationFactory());
-        System.out.println(temp.mean());
-        System.out.println(temp.mean());
-        System.out.println(temp.stddev());
-        System.out.println(temp.mean() - 1.96 * temp.stddev() / Math.sqrt(10));
-        System.out.println(temp.confidenceLow());
-        System.out.println(temp.confidenceHigh());
-    }
+
 }
