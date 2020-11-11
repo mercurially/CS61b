@@ -29,7 +29,7 @@ public class PercolationStats {
                 temp.open(temp1, temp2);
                 count++;
             }
-            ans[i] = (double) count / (double)(N * N);
+            ans[i] = (double) count / (double) (N * N);
         }
 
     }
@@ -41,7 +41,8 @@ public class PercolationStats {
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        return StdStats.stddev(ans);
+        double res = StdStats.stddev(ans);
+        return res;
     }
 
     // low endpoint of 95% confidence interval
@@ -53,6 +54,4 @@ public class PercolationStats {
     public double confidenceHigh() {
         return this.mean() + 1.96 * (this.stddev() / Math.sqrt(len));
     }
-
-
 }
